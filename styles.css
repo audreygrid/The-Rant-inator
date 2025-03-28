@@ -1,0 +1,306 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Login Container */
+#loginContainer {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 14px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 1s ease-out;
+}
+
+#loginContainer h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #ff6f61;
+    text-transform: uppercase;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #ff6f61;
+    color: white;
+}
+
+button:hover {
+    background-color: #e64a38;
+    transform: translateY(-4px);
+}
+
+/* Main Content */
+#mainContent {
+    display: none; /* Hidden until login */
+    width: 90%;
+    max-width: 1000px;
+    background: #ff704d;
+    color: white;
+    padding: 50px;
+    border-radius: 14px;
+    box-shadow: 0 8px 55px 20px rgba(255, 1, 1, 0.1);
+    text-align: center;
+    transform: scale(0.95);
+    opacity: 0;
+    animation: fadeIn 1s forwards, scaleUp 0.6s forwards;
+}
+
+/* Main User Display */
+#userDisplay {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+/* Categories List */
+#categoriesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Category Box */
+.category {
+    background: #ff6f61;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1.4em;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category:hover {
+    background: #e64a38;
+    transform: translateY(-5px);
+}
+
+/* Category Rants Container */
+#categoryRantsContainer {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+#rantsList {
+    margin-top: 20px;
+}
+
+.rant-item {
+    background: #f9f9f9;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.rant-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.rant-item h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.rant-item p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Back Button */
+#backToCategories {
+    background: #ff704d;
+    color: white;
+    padding: 16px 25px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 20px ;
+}
+
+#backToCategories:hover {
+    background: #e64a38;
+    transform: translateY(-3px);
+}
+
+/* Rant Posting GUI */
+#rantGUI {
+    display: none;
+    background: white;
+    padding: 50px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 650px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+#rantGUI input, #rantGUI textarea {
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#rantGUI input:focus, #rantGUI textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+    outline: none;
+}
+
+#submitRantBtn {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    padding: 18px 24px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    width: 100%;
+    max-width: 200px;
+}
+
+#submitRantBtn:hover {
+    background: #218838;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    #loginContainer {
+        padding: 30px;
+        width: 90%;
+    }
+
+    #mainContent {
+        padding: 30px;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    #categoriesList {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .category {
+        padding: 25px;
+        font-size: 1.2em;
+    }
+
+    .rant-item {
+        padding: 15px;
+    }
+
+    #rantGUI {
+        padding: 35px;
+    }
+
+    #submitRantBtn {
+        padding: 16px 20px;
+    }
+}
